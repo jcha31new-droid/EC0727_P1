@@ -174,10 +174,10 @@
 
 @media (max-width: 650px) {
   .encabezado-contenido {
-    grid-template-columns: 68px minmax(0, 1fr) 68px;
-    gap: 8px;
-    padding: 18px 12px;
-  }
+  grid-template-columns: 58px minmax(0, 1fr) 58px;
+  gap: 8px;
+  padding: 14px 10px;
+}
 
   .identidad-etiqueta {
     font-size: 0.58rem;
@@ -193,19 +193,34 @@
   }
 
   .menu-principal {
-    gap: 2px;
-    padding: 8px 5px;
-  }
+  gap: 5px 4px;
+  padding: 10px 5px;
+}
 
-  .menu-principal a {
-    padding: 9px 7px;
-    font-size: 0.78rem;
-  }
+.menu-principal a {
+  padding: 10px 7px;
+  font-size: 0.78rem;
+}
 
   .inicio {
     min-height: 400px;
     padding: 48px 20px;
   }
+
+  .inicio h2 {
+  font-size: clamp(2.2rem, 10vw, 3rem);
+  line-height: 1.15;
+  overflow-wrap: break-word;
+}
+
+.inicio h3 {
+  font-size: 1.1rem;
+}
+
+.inicio-descripcion {
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
   .inicio-etiqueta {
     font-size: 0.68rem;
@@ -215,6 +230,24 @@
   .seccion {
     padding: 42px 20px;
   }
+  .logo-institucional,
+.mascota-institucional {
+  width: 58px;
+  height: 58px;
+}
+
+.identidad {
+  min-width: 0;
+}
+
+.identidad h1 {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.nombre-institucion {
+  font-size: 0.85rem;
+}
 }
 
 /* Sección Sobre Nosotros */
@@ -745,3 +778,4 @@
 .enlaces-pie span {
   color: #D4AF37;
 }
+

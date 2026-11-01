@@ -208,8 +208,9 @@
   }
 
   .inicio h2 {
-  font-size: clamp(2.2rem, 10vw, 3rem);
-  line-height: 1.15;
+  font-size: clamp(1.65rem, 8vw, 2.5rem);
+  line-height: 1.2;
+  max-width: 100%;
   overflow-wrap: break-word;
 }
 

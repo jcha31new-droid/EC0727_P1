@@ -373,70 +373,97 @@ function App() {
 
   <h2>Contacto</h2>
 
-  <div className="contenedor-contacto">
+  
+<div className="contenedor-contacto">
 
-    <h3>Formulario de Contacto</h3>
+  <h3>Formulario de Contacto</h3>
 
-    <form
-      name="contacto"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      action="/?contacto=enviado"
-      encType="application/x-www-form-urlencoded"
-     >
-      <input type="hidden" name="form-name" value="contacto" />
+  <form
+    action="https://formsubmit.co/jcha31new@gmail.com"
+    method="POST"
+  >
+    <input
+      type="hidden"
+      name="_subject"
+      value="Nuevo mensaje - Escuela Secundaria Técnica No. 83"
+    />
 
-      <p className="campo-oculto">
-        <label>
-          No llenar este campo:
-          <input name="bot-field" />
-        </label>
-      </p>
+    <input type="hidden" name="_template" value="table" />
 
-      <div className="campo-contacto">
-        <label htmlFor="nombre">Nombre:</label>
-        <input
-          type="text"
-          id="nombre"
-          name="nombre"
-          placeholder="Tu nombre"
-          required
-          maxLength="100"
-        />
-      </div>
+    <input
+      type="text"
+      name="_honey"
+      style={{ display: "none" }}
+    />
 
-      <div className="campo-contacto">
-        <label htmlFor="correo">Correo:</label>
-        <input
-          type="email"
-          id="correo"
-          name="email"
-          placeholder="Tu correo"
-          required
-          maxLength="150"
-        />
-      </div>
+    <div className="campo-contacto">
+      <label htmlFor="nombre">Nombre:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Tu nombre"
+        maxLength="100"
+        required
+      />
+    </div>
 
-      <div className="campo-contacto">
-        <label htmlFor="mensaje">Mensaje:</label>
-        <textarea
-          id="mensaje"
-          name="mensaje"
-          placeholder="Escribe tu mensaje"
-          rows="5"
-          required
-          maxLength="3000"
-        ></textarea>
-      </div>
+    <div className="campo-contacto">
+      <label htmlFor="correo">Correo:</label>
+      <input
+        type="email"
+        id="correo"
+        name="email"
+        placeholder="Tu correo electrónico"
+        maxLength="150"
+        required
+      />
+    </div>
 
-      <button type="submit" className="boton-enviar">
-        Enviar
-      </button>
+    <div className="campo-contacto">
+      <label htmlFor="telefono">Teléfono:</label>
+      <input
+        type="tel"
+        id="telefono"
+        name="telefono"
+        placeholder="Tu número de teléfono"
+        maxLength="20"
+        required
+      />
+    </div>
 
-    </form>
+    <div className="campo-contacto">
+      <label htmlFor="asunto">Asunto:</label>
+      <input
+        type="text"
+        id="asunto"
+        name="asunto"
+        placeholder="Asunto del mensaje"
+        maxLength="150"
+        required
+      />
+    </div>
 
-  </div>
+    <div className="campo-contacto">
+      <label htmlFor="mensaje">Mensaje:</label>
+      <textarea
+        id="mensaje"
+        name="mensaje"
+        placeholder="Escribe tu mensaje"
+        rows="5"
+        maxLength="3000"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" className="boton-enviar">
+      Enviar
+    </button>
+
+  </form>
+
+</div>
+
 
   <VolverArriba />
 

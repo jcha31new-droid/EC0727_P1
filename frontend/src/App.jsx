@@ -368,106 +368,111 @@ function App() {
 
 
         
+
 {/* SECCIÓN: CONTACTO */}
 <section id="contacto" className="seccion seccion-alterna">
 
   <h2>Contacto</h2>
 
-  
-<div className="contenedor-contacto">
+  <div className="contenedor-contacto">
 
-  <h3>Formulario de Contacto</h3>
+    <h3>Formulario de Contacto</h3>
 
-  <form
-    action="https://formsubmit.co/jcha31new@gmail.com"
-    method="POST"
-  >
-    <input
-      type="hidden"
-      name="_subject"
-      value="Nuevo mensaje - Escuela Secundaria Técnica No. 83"
-    />
+    <form
+      action="https://api.web3forms.com/submit"
+      method="POST"
+    >
 
-    <input type="hidden" name="_template" value="table" />
-
-    <input
-      type="text"
-      name="_honey"
-      style={{ display: "none" }}
-    />
-
-    <div className="campo-contacto">
-      <label htmlFor="nombre">Nombre:</label>
       <input
-        type="text"
-        id="nombre"
-        name="nombre"
-        placeholder="Tu nombre"
-        maxLength="100"
-        required
+        type="hidden"
+        name="access_key"
+        value="2e341df5-6b1b-417b-9476-f4f60cea4fb1"
       />
-    </div>
 
-    <div className="campo-contacto">
-      <label htmlFor="correo">Correo:</label>
       <input
-        type="email"
-        id="correo"
-        name="email"
-        placeholder="Tu correo electrónico"
-        maxLength="150"
-        required
+        type="hidden"
+        name="subject"
+        value="Nuevo mensaje - Escuela Secundaria Técnica No. 83"
       />
-    </div>
 
-    <div className="campo-contacto">
-      <label htmlFor="telefono">Teléfono:</label>
       <input
-        type="tel"
-        id="telefono"
-        name="telefono"
-        placeholder="Tu número de teléfono"
-        maxLength="20"
-        required
+        type="checkbox"
+        name="botcheck"
+        style={{ display: "none" }}
       />
-    </div>
 
-    <div className="campo-contacto">
-      <label htmlFor="asunto">Asunto:</label>
-      <input
-        type="text"
-        id="asunto"
-        name="asunto"
-        placeholder="Asunto del mensaje"
-        maxLength="150"
-        required
-      />
-    </div>
+      <div className="campo-contacto">
+        <label htmlFor="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Tu nombre"
+          maxLength="100"
+          required
+        />
+      </div>
 
-    <div className="campo-contacto">
-      <label htmlFor="mensaje">Mensaje:</label>
-      <textarea
-        id="mensaje"
-        name="mensaje"
-        placeholder="Escribe tu mensaje"
-        rows="5"
-        maxLength="3000"
-        required
-      ></textarea>
-    </div>
+      <div className="campo-contacto">
+        <label htmlFor="correo">Correo:</label>
+        <input
+          type="email"
+          id="correo"
+          name="email"
+          placeholder="Tu correo electrónico"
+          maxLength="150"
+          required
+        />
+      </div>
 
-    <button type="submit" className="boton-enviar">
-      Enviar
-    </button>
+      <div className="campo-contacto">
+        <label htmlFor="telefono">Teléfono:</label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          placeholder="Tu número de teléfono"
+          maxLength="20"
+          required
+        />
+      </div>
 
-  </form>
+      <div className="campo-contacto">
+        <label htmlFor="asunto">Asunto:</label>
+        <input
+          type="text"
+          id="asunto"
+          name="asunto"
+          placeholder="Asunto del mensaje"
+          maxLength="150"
+          required
+        />
+      </div>
 
-</div>
+      <div className="campo-contacto">
+        <label htmlFor="mensaje">Mensaje:</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          placeholder="Escribe tu mensaje"
+          rows="5"
+          maxLength="3000"
+          required
+        ></textarea>
+      </div>
 
+      <button type="submit" className="boton-enviar">
+        Enviar
+      </button>
+
+    </form>
+
+  </div>
 
   <VolverArriba />
 
 </section>
+
 
       </main>
 

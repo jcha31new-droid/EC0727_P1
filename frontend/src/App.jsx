@@ -1,8 +1,46 @@
 
+import { useState } from "react";
 import './App.css'
 import VolverArriba from "./VolverArriba";
 
 function App() {
+  const [mensajeFormulario, setMensajeFormulario] = useState("");
+  const [enviando, setEnviando] = useState(false);
+
+  async function manejarEnvio(evento) {
+    evento.preventDefault();
+
+    const formulario = evento.currentTarget;
+
+    setEnviando(true);
+    setMensajeFormulario("");
+
+    try {
+      const respuesta = await fetch(formulario.action, {
+        method: "POST",
+        body: new FormData(formulario),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      const resultado = await respuesta.json();
+
+      if (respuesta.ok && resultado.success) {
+        formulario.reset();
+        setMensajeFormulario("¡Tu mensaje se envió correctamente!");
+      } else {
+        setMensajeFormulario("No se pudo enviar el mensaje. Intenta nuevamente.");
+      }
+
+    } catch (error) {
+      setMensajeFormulario("Ocurrió un error al enviar el mensaje. Intenta nuevamente.");
+
+    } finally {
+      setEnviando(false);
+    }
+  }
+
   return (
     <>
 {/* ENCABEZADO */}   
@@ -378,10 +416,11 @@ function App() {
 
     <h3>Formulario de Contacto</h3>
 
-    <form
-      action="https://api.web3forms.com/submit"
-      method="POST"
-    >
+  <form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  onSubmit={manejarEnvio}
+  >
 
       <input
         type="hidden"
@@ -461,9 +500,19 @@ function App() {
         ></textarea>
       </div>
 
-      <button type="submit" className="boton-enviar">
-        Enviar
-      </button>
+      <button
+  type="submit"
+  className="boton-enviar"
+  disabled={enviando}
+>
+  {enviando ? "Enviando..." : "Enviar"}
+</button>
+
+{mensajeFormulario && (
+  <p role="status" aria-live="polite">
+    {mensajeFormulario}
+  </p>
+)}
 
     </form>
 
